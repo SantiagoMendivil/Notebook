@@ -27,6 +27,7 @@
 - [Getting software to customers](#getting-software-to-customers)
   - [Software Deployment](#software-deployment)
   - [Mobile application deployment](#mobile-application-deployment)
+- [Programming language](#programming-language)
 
 > "The only constant in the technology industry is change"
 > - Marc Benioff, CEO of Salesforce.com
@@ -123,4 +124,10 @@ The code written is packaged, tested and released in order for the user to use i
 - New executable is given to tester 
 - Tester manually checks for bugs 
 - Executable is copied to app store. 
+
+
+
+# Programming language 
+A way of providing instructions to a computer in order to solve a problem or achieve a desired business goal. This programming language translate machine language (0-1) to more legible instructions. 
+
 
