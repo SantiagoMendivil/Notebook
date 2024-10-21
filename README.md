@@ -1,10 +1,10 @@
-# Notebook# Software Engineering Topics Notebook
+# Software Engineering Topics Notebook
 
 Welcome to the **Software Engineering Topics Notebook**! This repository is dedicated to documenting a variety of software engineering topics, serving as a comprehensive resource for engineers, developers, and enthusiasts. It will contain in-depth notes, tutorials, and guides covering a wide range of topics in software engineering.
 
 ## Table of Contents
 
-- [Notebook# Software Engineering Topics Notebook](#notebook-software-engineering-topics-notebook)
+- [Software Engineering Topics Notebook](#software-engineering-topics-notebook)
   - [Table of Contents](#table-of-contents)
     - [Introduction](#introduction)
     - [How to Use This Notebook](#how-to-use-this-notebook)
