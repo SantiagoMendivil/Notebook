@@ -1,6 +1,6 @@
 # Software Engineering Topics Notebook
 
-Welcome to the **Software Engineering Topics Notebook**! This repository is dedicated to documenting a variety of software engineering topics, serving as a comprehensive resource for engineers, developers, and enthusiasts. It will contain in-depth notes, tutorials, and guides covering a wide range of topics in software engineering.
+This repository is dedicated to documenting a variety of software engineering topics, serving as a comprehensive resource for engineers and developers. It will contain in-depth notes, tutorials, and guides covering a wide range of topics in software engineering.
 
 ## Table of Contents
 
@@ -19,8 +19,7 @@ This notebook is a curated collection of topics aimed at deepening your understa
 
 ### How to Use This Notebook
 
-Each topic is organized as a separate section in the repository, and new topics will be added regularly. You can browse the topics by navigating to the corresponding folders, which will contain Markdown files (`.md`) or Jupyter Notebooks (`.ipynb`) for each topic.
-
+Each topic is organized as a separate section in the repository, and new topics will be added regularly. You can browse the topics by navigating to the corresponding folders, which will contain Markdown files (`.md`).
 To view and edit the content:
 
 1. **Clone the repository** to your local machine:
@@ -40,7 +39,7 @@ vim topics/software-architecture/microservices.md
 ### Topics covered
 ### Topics Covered
 
-The following is a non-exhaustive list of topics covered in this notebook:
+The following is a non-exhaustive possible list of topics covered in this notebook:
 
 - **Software Architecture**
   - Microservices
