@@ -1,17 +1,18 @@
 # Table of contents 
 - [Table of contents](#table-of-contents)
-- [Doubly Linked Lists Introduction](#doubly-linked-lists-introduction)
+- [Doubly Linked Lists Introduction (Conceptual)](#doubly-linked-lists-introduction-conceptual)
   - [Common operations](#common-operations)
   - [Adding to the head](#adding-to-the-head)
   - [Adding to the tail](#adding-to-the-tail)
   - [Removing the head](#removing-the-head)
   - [Removing the tail](#removing-the-tail)
   - [Removin from the middle of the list](#removin-from-the-middle-of-the-list)
-- [Nodes in double linked lists](#nodes-in-double-linked-lists)
+- [Nodes in double linked lists (Implementation)](#nodes-in-double-linked-lists-implementation)
 - [Definition of double linked list](#definition-of-double-linked-list)
+  - [Adding to the head](#adding-to-the-head-1)
 
 
-# Doubly Linked Lists Introduction
+# Doubly Linked Lists Introduction (Conceptual)
 Is comprised of a series of nodes. Each node contains data and two links (or pointers) to the next and previous nodes in the list. 
 
 The head node is the node at the beginning of the list, and the tail node is the node at the end of the list. 
@@ -53,7 +54,7 @@ Similarly, removing the tail involves updating the pointer at the end of the lis
 - We must set the removed node’s following node’s previous pointer to its preceding node
 
 
-# Nodes in double linked lists 
+# Nodes in double linked lists (Implementation)
 The node is slightly different in a double linked lists. In this case you need a value, a pointer to the previous node and a pointer to the next node. 
 The methods for this kind of node are 
 - Add a new node to the head (beginning) of the list 
@@ -96,3 +97,12 @@ class DoublyLinkedList:
     self.head_node = None
     self.tail_node = None
 ```
+
+## Adding to the head
+- Start by checking to see if there is a current head to the list 
+- If there is, then we want to reset the pointers at the head of the list
+- Set the current head's previous node to the new head 
+- Set the new head's next node to the current head 
+- Update the head property to be the new head 
+- Finally, if there isn't a current tail to the list (meaning the list was empty)
+- Update the tail property to be the new head since that node will be both the head and tail of the list. 
