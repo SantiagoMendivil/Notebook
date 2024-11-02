@@ -2,6 +2,7 @@
 - [Table of contents](#table-of-contents)
 - [Builder Pattern](#builder-pattern)
   - [What is it?](#what-is-it)
+  - [Class Diagram](#class-diagram)
 - [Builder Pattern Example in Python](#builder-pattern-example-in-python)
   - [Example](#example)
     - [House Class](#house-class)
@@ -20,6 +21,9 @@
 
 ## What is it? 
 Formally, a builder pattern encapsulates or hides the process of building a complex object and separates the representation of the object and its construction. The separation allows us to construct different representations using the same construction process. 
+
+## Class Diagram 
+![Class Diagram for Builder Pattern](images/image.png)
 
 # Builder Pattern Example in Python
 
