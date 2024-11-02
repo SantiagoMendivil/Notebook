@@ -37,75 +37,75 @@ Let's create an example of a builder pattern to construct a `House` object.
 
 ```python
 class House:
-        def __init__(self):
-                self._walls = None
-                self._roof = None
-                self._windows = None
-                self._doors = None
+    def __init__(self):
+        self._walls = None
+        self._roof = None
+        self._windows = None
+        self._doors = None
 
-        def __str__(self):
-                return f'House with {self._walls} walls, {self._roof} roof, {self._windows} windows, and {self._doors} doors.'
+    def __str__(self):
+        return f'House with {self._walls} walls, {self._roof} roof, {self._windows} windows, and {self._doors} doors.'
 
-        def set_walls(self, walls):
-                self._walls = walls
+    def set_walls(self, walls):
+        self._walls = walls
 
-        def set_roof(self, roof):
-                self._roof = roof
+    def set_roof(self, roof):
+        self._roof = roof
 
-        def set_windows(self, windows):
-                self._windows = windows
+    def set_windows(self, windows):
+        self._windows = windows
 
-        def set_doors(self, doors):
-                self._doors = doors
+    def set_doors(self, doors):
+        self._doors = doors
 ```
 
 ### HouseBuilder Class
 
 ```python
 class HouseBuilder:
-        def __init__(self):
-                self.house = House()
+    def __init__(self):
+        self.house = House()
 
-        def build_walls(self, walls):
-                self.house.set_walls(walls)
-                return self
+    def build_walls(self, walls):
+        self.house.set_walls(walls)
+        return self
 
-        def build_roof(self, roof):
-                self.house.set_roof(roof)
-                return self
+    def build_roof(self, roof):
+        self.house.set_roof(roof)
+        return self
 
-        def build_windows(self, windows):
-                self.house.set_windows(windows)
-                return self
+    def build_windows(self, windows):
+        self.house.set_windows(windows)
+        return self
 
-        def build_doors(self, doors):
-                self.house.set_doors(doors)
-                return self
+    def build_doors(self, doors):
+        self.house.set_doors(doors)
+        return self
 
-        def get_house(self):
-                return self.house
+    def get_house(self):
+        return self.house
 ```
 
 ### Director Class
 
 ```python
 class Director:
-        def __init__(self, builder):
-                self._builder = builder
+    def __init__(self, builder):
+        self._builder = builder
 
-        def construct_house(self):
-                self._builder.build_walls("brick").build_roof("tile").build_windows(4).build_doors(2)
-                return self._builder.get_house()
+    def construct_house(self):
+        self._builder.build_walls("brick").build_roof("tile").build_windows(4).build_doors(2)
+        return self._builder.get_house()
 ```
 
 ### Usage
 
 ```python
 if __name__ == "__main__":
-        builder = HouseBuilder()
-        director = Director(builder)
-        house = director.construct_house()
-        print(house)
+    builder = HouseBuilder()
+    director = Director(builder)
+    house = director.construct_house()
+    print(house)
 ```
 
 ### Output
@@ -125,83 +125,83 @@ This example will demonstrate how the builder pattern can be used in a software 
 
 ```python
 class SoftwareConfiguration:
-        def __init__(self):
-                self._database = None
-                self._cache = None
-                self._message_queue = None
-                self._logging = None
+    def __init__(self):
+        self._database = None
+        self._cache = None
+        self._message_queue = None
+        self._logging = None
 
-        def __str__(self):
-                return f'SoftwareConfiguration with {self._database} database, {self._cache} cache, {self._message_queue} message queue, and {self._logging} logging.'
+    def __str__(self):
+        return f'SoftwareConfiguration with {self._database} database, {self._cache} cache, {self._message_queue} message queue, and {self._logging} logging.'
 
-        def set_database(self, database):
-                self._database = database
+    def set_database(self, database):
+        self._database = database
 
-        def set_cache(self, cache):
-                self._cache = cache
+    def set_cache(self, cache):
+        self._cache = cache
 
-        def set_message_queue(self, message_queue):
-                self._message_queue = message_queue
+    def set_message_queue(self, message_queue):
+        self._message_queue = message_queue
 
-        def set_logging(self, logging):
-                self._logging = logging
+    def set_logging(self, logging):
+        self._logging = logging
 ```
 
 ### SoftwareConfigurationBuilder Class
 
 ```python
 class SoftwareConfigurationBuilder:
-        def __init__(self):
-                self.configuration = SoftwareConfiguration()
+    def __init__(self):
+        self.configuration = SoftwareConfiguration()
 
-        def build_database(self, database):
-                self.configuration.set_database(database)
-                return self
+    def build_database(self, database):
+        self.configuration.set_database(database)
+        return self
 
-        def build_cache(self, cache):
-                self.configuration.set_cache(cache)
-                return self
+    def build_cache(self, cache):
+        self.configuration.set_cache(cache)
+        return self
 
-        def build_message_queue(self, message_queue):
-                self.configuration.set_message_queue(message_queue)
-                return self
+    def build_message_queue(self, message_queue):
+        self.configuration.set_message_queue(message_queue)
+        return self
 
-        def build_logging(self, logging):
-                self.configuration.set_logging(logging)
-                return self
+    def build_logging(self, logging):
+        self.configuration.set_logging(logging)
+        return self
 
-        def get_configuration(self):
-                return self.configuration
+    def get_configuration(self):
+        return self.configuration
 ```
 
 ### Director Class
 
 ```python
 class Director:
-        def __init__(self, builder):
-                self._builder = builder
+    def __init__(self, builder):
+        self._builder = builder
 
-        def construct_full_configuration(self):
-                self._builder.build_database("PostgreSQL").build_cache("Redis").build_message_queue("RabbitMQ").build_logging("ELK")
-                return self._builder.get_configuration()
+    def construct_full_configuration(self):
+        self._builder.build_database("PostgreSQL").build_cache("Redis").build_message_queue("RabbitMQ").build_logging("ELK")
+        return self._builder.get_configuration()
 
-        def construct_minimal_configuration(self):
-                self._builder.build_database("SQLite").build_logging("Console")
-                return self._builder.get_configuration()
+    def construct_minimal_configuration(self):
+        self._builder.build_database("SQLite").build_logging("Console")
+        return self._builder.get_configuration()
 ```
 
 ### Usage
 
 ```python
 if __name__ == "__main__":
-        builder = SoftwareConfigurationBuilder()
-        director = Director(builder)
+    builder = SoftwareConfigurationBuilder()
+    director = Director(builder)
 
-        full_config = director.construct_full_configuration()
-        print(full_config)
+    full_config = director.construct_full_configuration()
+    print(full_config)
 
-        minimal_config = director.construct_minimal_configuration()
-        print(minimal_config)
+    minimal_config = director.construct_minimal_configuration()
+    print(minimal_config)
 ```
 
 ### Output
