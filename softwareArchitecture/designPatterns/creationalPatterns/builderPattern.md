@@ -16,6 +16,11 @@
     - [Director Class](#director-class-1)
     - [Usage](#usage-1)
     - [Output](#output-1)
+  - [Example: Implementing the Builder Pattern in Django Projects](#example-implementing-the-builder-pattern-in-django-projects)
+    - [Models](#models)
+    - [QuerySetBuilder Class](#querysetbuilder-class)
+    - [Director Class](#director-class-2)
+    - [Usage](#usage-2)
 
 # Builder Pattern
 
@@ -212,3 +217,73 @@ SoftwareConfiguration with SQLite database, None cache, None message queue, and 
 ```
 
 In this example, the `SoftwareConfigurationBuilder` class provides methods to set different parts of the `SoftwareConfiguration` object. The `Director` class uses the builder to construct different types of `SoftwareConfiguration` objects step by step. This demonstrates how the builder pattern can be used to create complex configurations with various options in a software development project.
+
+
+## Example: Implementing the Builder Pattern in Django Projects
+
+In Django projects, the builder pattern can be useful for constructing complex querysets or creating objects with many optional fields. Here is an example of how you might implement the builder pattern to create a complex queryset for a Django model.
+
+### Models
+
+```python
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+    category = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+```
+
+### QuerySetBuilder Class
+
+```python
+class QuerySetBuilder:
+    def __init__(self, model):
+        self.queryset = model.objects.all()
+
+    def filter_by_category(self, category):
+        self.queryset = self.queryset.filter(category=category)
+        return self
+
+    def filter_by_price_range(self, min_price, max_price):
+        self.queryset = self.queryset.filter(price__gte=min_price, price__lte=max_price)
+        return self
+
+    def filter_in_stock(self):
+        self.queryset = self.queryset.filter(in_stock=True)
+        return self
+
+    def get_queryset(self):
+        return self.queryset
+```
+
+### Director Class
+
+```python
+class ProductQueryDirector:
+    def __init__(self, builder):
+        self._builder = builder
+
+    def construct_electronics_in_stock(self):
+        return self._builder.filter_by_category("Electronics").filter_in_stock().get_queryset()
+
+    def construct_affordable_products(self):
+        return self._builder.filter_by_price_range(0, 100).get_queryset()
+```
+
+### Usage
+
+```python
+if __name__ == "__main__":
+    builder = QuerySetBuilder(Product)
+    director = ProductQueryDirector(builder)
+
+    electronics_in_stock = director.construct_electronics_in_stock()
+    print(electronics_in_stock)
+
+    affordable_products = director.construct_affordable_products()
+    print(affordable_products)
+```
+
+In this example, the `QuerySetBuilder` class provides methods to filter a Django queryset based on different criteria. The `ProductQueryDirector` class uses the builder to construct specific querysets step by step. This demonstrates how the builder pattern can be used to create complex querysets in a Django project.
