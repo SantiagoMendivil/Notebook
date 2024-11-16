@@ -108,8 +108,8 @@ Despues en settings
 # settings.py
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'echeraritours@gmail.com'
-EMAIL_HOST_PASSWORD = 'FuckPelona14!'
+EMAIL_HOST_USER = 'tu email'
+EMAIL_HOST_PASSWORD = 'tu contraseña'
 EMAIL_USE_TLS = True
 ```
 
