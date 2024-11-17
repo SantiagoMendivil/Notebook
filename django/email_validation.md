@@ -124,7 +124,7 @@ return redirect('usuario/seleccion_registro/?command=verification&email='+email)
 In the view that we are blocking
 ```html
 {% if request.GET.command == 'verification' %}
-<div class="container mx-auto alert alert-info" role='alert' style="max-width=380px;"" margin-top="100;">
+<div class="container mx-auto alert alert-info" role='alert' style="max-width=380px;" margin-top="100;">
     Gracias por registrarte. Entra a tu cuenta de correo para terminar de configurar tu cuenta.
 </div>
 {% else %}
