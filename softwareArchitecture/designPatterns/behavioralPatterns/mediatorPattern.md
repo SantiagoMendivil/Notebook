@@ -10,7 +10,6 @@
   - [Define the Colleague Interface](#define-the-colleague-interface)
   - [Define the Concrete colleague](#define-the-concrete-colleague)
   - [Usage Example](#usage-example)
-- [views.py](#viewspy)
 
 # Meditator Pattern
 The pattern definition says it is applied to encapsulate or centralize the interactions amongst a number of objects. Object orientated design may result in behavior being distributed among several classes and lead to too many connections among objects. 
@@ -143,3 +142,4 @@ def chat_view(request):
     user3.send_message("Hey, folks!")
 
     return HttpResponse("Messages sent and received.")
+```
