@@ -8,6 +8,7 @@
   - [If Statement](#if-statement)
     - [Comparison Operators](#comparison-operators)
     - [OR and AND](#or-and-and)
+    - [Multiple conditions](#multiple-conditions)
     - [If with simple calculation](#if-with-simple-calculation)
 
 # Scripts With Linux
@@ -102,6 +103,29 @@ elif [[ "$char" == "n" || "$char" == "N" ]]; then
     echo "NO"
 else
     echo "Invalid character"
+fi
+```
+
+### Multiple conditions 
+We can read inputs in several lines one by one by using -r after the `read` statement and before the variable name. 
+
+Here is an example of multiple conditions on the logic for evaluating a triangle and its type: 
+
+```bash
+#!/bin/bash
+
+# Read three integers, one per line
+read -r a
+read -r b
+read -r c
+
+# Check for triangle type
+if [[ $a -eq $b && $b -eq $c ]]; then
+    echo "EQUILATERAL"
+elif [[ $a -eq $b || $b -eq $c || $a -eq $c ]]; then
+    echo "ISOSCELES"
+else
+    echo "SCALENE"
 fi
 ```
 
