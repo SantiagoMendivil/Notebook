@@ -10,6 +10,12 @@
     - [OR and AND](#or-and-and)
     - [Multiple conditions](#multiple-conditions)
     - [If with simple calculation](#if-with-simple-calculation)
+  - [Methods](#methods)
+    - [Verifying if there is an input](#verifying-if-there-is-an-input)
+  - [Error-handling](#error-handling)
+    - [Using set](#using-set)
+    - [Manually proving exit codes](#manually-proving-exit-codes)
+    - [](#)
 
 # Scripts With Linux
 
@@ -143,3 +149,62 @@ Let's break down this code:
 - **for statement**: The for is initialized to be from 1 to 99 inclusive in a sequence using `seq`.
 - **if**: The if is set to compare two expressions using double parenthesis and the expressions inside double quotes 
 - **$num**: The variables allways are called with the dollar sign beside the variable's name.  
+
+
+## Methods
+
+### Verifying if there is an input 
+```bash 
+#!/usr/bin/env bash 
+
+two_fer () {
+    if [[ $1 ]]; then
+        echo "One for $1, one for me."
+    else
+        echo "One for you, one for me."
+    fi
+}
+
+# Calling the function and capturing the output
+result=$(two_fer "$1")
+echo "$result"
+```
+
+## Error-handling 
+
+### Using set
+You can use the keyword set in order to manage errors. 
+
+- set -e: Ends the script if any command fails (it returns code different than 0)
+- set -u: Ends the script if any undefined variable is used. 
+- set -o pipefail: Make a pipeline to fail if any command of the pipeline fails. 
+
+```bash 
+#!/usr/bin/env bash
+
+set -euo pipefail 
+
+echo "Initializing script..."
+
+# Function to make
+cp undefined_file.txt destination/ 
+
+echo "This message won't appear if any error occurs."
+```
+
+In this code, if cp fails, the script will stop and won't execute the following lines.
+
+### Manually proving exit codes 
+Each bash command returns a status code (0 is succesful and different than 0 is an error). We can use **$?** to capture the return code in the last executed command. 
+
+```bash
+#!/usr/bin/env bash 
+
+cp file_undefined.txt destination/ 
+
+if [[ $? -ne 0 ]]; then 
+    echo "Error while copying the file."
+fi 
+```
+
+### 
