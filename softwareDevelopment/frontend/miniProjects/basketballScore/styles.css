@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: "VT323", monospace;
+    background-color: #461009;
+    color: #461009;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.home,
+.visitor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #feada3;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.home {
+    margin-right: 20px;
+}
+
+.score h2 {
+    font-size: 100px;
+    margin: 0;
+}
+
+button {
+    background-color: #461009;
+    color: #feada3;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eEA5A6;
+    color: #461009;
+}
+
+.reset {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
