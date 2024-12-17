@@ -1,0 +1,7 @@
+# For objects in C# programs
+obj/ 
+
+# For binary files in C# programs
+bin/
+
+.sln
