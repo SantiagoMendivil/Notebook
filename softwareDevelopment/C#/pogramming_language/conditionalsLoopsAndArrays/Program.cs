@@ -73,6 +73,25 @@ class ConditionalAndLoops
         int y = 4;
         Console.WriteLine((x > y) ? "x is greater than y" : (x < y) ? "x is less than y" : (x == y) ? "x is equal to y" : "No result");
 
+        ///////Arrays 
+        // Static arrays 
+        // dataType arrayName[arraySize]; 
+        int staticArray[5];
 
+        // Dynamic arrays 
+        // dataType[] arrayName = new dataType[arraySize];
+        int[] dynamicArray = new int[10];
+
+        // Initializing Static Arrays 
+        int[] staticArrayDeclaration = { 1, 2, 3, 4, 5 };
+
+        // Initializing Dynamic Arrays 
+        int[] dynamicArrayDeclaration = new int[3] { 1, 2, 3 };
+
+        ///////Multidimensional Arrays
+        int[,] multiArray = new int[3, 3];
+
+        // Initialize a multidimensional array
+        int[,] array2D = new int[2, 2] { { 1, 2 }, { 3, 4 } };
     }
 }
