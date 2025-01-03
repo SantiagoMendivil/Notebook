@@ -101,3 +101,9 @@ urlpatterns = [
 1. Create a directory called requirements
 2. Inside of the requirements directory create a `local.txt` file in order to save all the dependencies for a local environment
 3. Create a `test.txt` file and a `prod.txt` in order to save the testing dependencies and the production dependencies. 
+4. Inside of the django project, at the same level of settings.py, create a new directory called `settings` with a `base.py` file that will share all the common configurations among the project; `local.py` and `prod.py` that their names explain what they are for. 
+5. In `base.py`
+   1. As we created a new settings directory, we need to change the BASE_DIR variable in order to read the correct direction. 
+   2. The INSTALLED_APPS will be destructured into three lists: LOCAL_APPS, DJANGO_APPS and THIRD_PARTY_APPS 
+6. In order to read the new `local.py` we need to run the following command: `python manage.py runserver --settings=project_name.settings.local`. The keyword local means the environment in which the project is running.
+7. In order to avoid writing all that command, we can edit the file `manage.py` and in the section where it says the project name with .settings, add the environment configurations name that we want. 
