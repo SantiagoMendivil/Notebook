@@ -17,8 +17,6 @@ Social media helps us immensely in understanding the observer pattern. If you ar
 A subject can have many observers and is a one to many relationship. The pattern is formally defined as **a one to many dependency between objects so that when one object changes state all the dependents are notified.**
 
 # Class Diagram 
-![observer pattern](images/observer1.png)
-
 ![Observer Pattern](images/observer2.png)
 
 # Caveats 
