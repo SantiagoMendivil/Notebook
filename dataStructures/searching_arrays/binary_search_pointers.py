@@ -1,32 +1,33 @@
-def binary_search(sorted_list, left_pointer, right_pointer, target):
-    """Binary search algorithm using pointers
+def busqueda_binaria(lista_ordenada, puntero_izquierdo, puntero_derecho, valor):
+    """Algoritmo de busqueda binaria usando punteros
     Args:
-        :param sorted_list: List of items
-        :param left_pointer: Start index of the sub-list
-        :param right_pointer: End index of the sub-list
-        :param target: The value to search for
-    
+        :param lista_ordenada: Lista ordenada de elementos
+        :param puntero_izquierdo: Indice inicial de la sub-lista 
+        :param puntero_derecho: Indice final de la sub-lista
+        :param valor: El valor a buscar en la lista
+
     Returns:
-        :return: Index of the target value if found, otherwise "value not found"
+        :return: Indice de el valor si se encuentra, de otro modo "valor no encontrado"
     """
     # this condition indicates we've reached an empty "sub-list"
-    if left_pointer >= right_pointer:
-        return "value not found"
+    if puntero_izquierdo >= puntero_derecho:
+        return "valor no encontrado"
     # We calculate the middle index from the pointers now
-    mid_idx = (left_pointer + right_pointer) // 2
-    mid_val = sorted_list[mid_idx]
-    if mid_val == target:
-        return mid_idx
-    if mid_val > target:
+    indice_medio = (puntero_izquierdo + puntero_derecho) // 2
+    valor_medio = lista_ordenada[indice_medio]
+    if valor_medio == valor:
+        return indice_medio
+    if valor_medio > valor:
         # we reduce the sub-list by passing in a new right_pointer
-        return binary_search(sorted_list, left_pointer, mid_idx, target)
-    if mid_val < target:
+        return busqueda_binaria(lista_ordenada, puntero_izquierdo, indice_medio, valor)
+    if valor_medio < valor:
         # we reduce the sub-list by passing in a new left_pointer
-        return binary_search(sorted_list, mid_idx + 1, right_pointer, target)
-    
+        return busqueda_binaria(lista_ordenada, indice_medio + 1, puntero_derecho, valor)
+
+
 values = [77, 80, 102, 123, 288, 300, 540]
 start_of_values = 0
 end_of_values = len(values)
-result = binary_search(values, start_of_values, end_of_values, 288)
+result = busqueda_binaria(values, start_of_values, end_of_values, 288)
 
 print("element {0} is located at index {1}".format(288, result))
