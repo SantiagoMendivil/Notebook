@@ -20,3 +20,8 @@ In order to activate this command we use the following command:
 env/Scripts/activate
 ```
 
+You can deactivate the virtual environment by calling the following command: 
+
+```shell
+deactivate
+```
