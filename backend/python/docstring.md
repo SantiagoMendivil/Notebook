@@ -41,9 +41,9 @@ def calculate_monthly_payment(principal: float, interest_rate: float, loan_term_
     Calculates the monthly payment for a fixed-rate loan.
 
     Args:
-        principal: The total amount borrowed (float).
-        interest_rate: The annual interest rate (as a decimal, float).
-        loan_term_years: The loan term in years (int).
+        principal (float): The total amount borrowed.
+        interest_rate (float): The annual interest rate (as a decimal, float).
+        loan_term_years (int): The loan term in years.
 
     Returns:
         The monthly payment amount (float).
