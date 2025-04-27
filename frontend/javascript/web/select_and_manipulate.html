@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple example of selecting elements</title>
+</head>
+<body>  
+    <h1>People that entered: </h1>
+    <h2 id="count-el"></h2>
+    <h3>Click the buttons to increment, decrement, or save the count.</h3>
+    <button id="increment-btn" onclick="increment()">Increment</button>
+    <button id="decrement-btn" onclick="decrement()">Decrement</button>
+    <button id="save-btn" onclick="save()">Save</button>
+    <p id="records-el"></p>
+
+    <script>
+        let count = 0
+        const countEl = document.getElementById("count-el");
+        const recordEl = document.getElementById("records-el");
+        const saveEl = document.getElementById("records-el");
+        const increment = () => {
+            let count = parseInt(countEl.innerText)
+            count += 1
+            countEl.innerText = count
+        }
+
+        const decrement = () => {
+            let count = parseInt(countEl.innerText)
+            count -= 1
+            countEl.innerText = count
+        }
+
+        const save = () => {
+            let countStr = count + " -"
+            saveEl.innerText += countStr
+            countEl.innerText = 0
+        }
+    </script>
+</body>
+</html>
